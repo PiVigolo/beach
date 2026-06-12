@@ -55,7 +55,7 @@ app.post('/api/remove', (req, res) => {
 
     const dati = leggiDati();
 
-    if (dati[squadra] !== undefined) {
+    if (dati[squadra] !== undefined && dati[squadra] > 0) {
         dati[squadra]--;
         salvaDati(dati);
     }
@@ -69,7 +69,7 @@ app.post('/api/addfive', (req, res) => {
     const dati = leggiDati();
 
     if (dati[squadra] !== undefined) {
-        dati[squadra]+=5;
+        dati[squadra] += 5;
         salvaDati(dati);
     }
 
